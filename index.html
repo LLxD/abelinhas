@@ -32,6 +32,7 @@
                       emailjs.sendForm('service_971noxh', 'template_a4w7szm', this)
                           .then(function() {
                               console.log('SUCCESS!');
+                              document.getElementById('alerta').classList.remove('d-none');
                           }, function(error) {
                               console.log('FAILED...', error);
                           });
@@ -160,6 +161,9 @@
                 style="color: rgb(0, 0, 0)"
                 >enviar :D</button
               >
+              <div id="alerta" class="alert alert-success alert-dismissible d-none mt-4" role="alert">
+                Email enviado!
+              </div>
 
             </div>
           </form>
