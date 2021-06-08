@@ -91,10 +91,12 @@ h6,
 a,
 span,
 form,
-p {
+p,
+button {
   font-family: "Amatic SC", cursive !important;
 }
 
-a {
+a,
+button {
   font-size: 1.5em !important;
 }
