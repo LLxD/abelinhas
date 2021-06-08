@@ -19,17 +19,37 @@
     />
     <link rel="stylesheet" href="assets/css/styles.min.css" />
     <link rel="shortcut icon" href="assets/img/mdi_bee-flower.svg" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+      (function() {
+      emailjs.init("user_dBh2cKXG6hYtcY3FFqa1L");
+      })();</script>
+      <script>
+      window.onload = function() {
+                  document.getElementById('contact').addEventListener('submit', function(event) {
+                      event.preventDefault();
+                      emailjs.sendForm('service_971noxh', 'template_a4w7szm', this)
+                          .then(function() {
+                              console.log('SUCCESS!');
+                          }, function(error) {
+                              console.log('FAILED...', error);
+                          });
+                  });
+              }
+      
+      </script>
   </head>
 
   <body
-    id="page-top"
+    id="home"
     data-bs-spy="scroll"
     data-bs-target="#mainNav"
     data-bs-offset="56"
   >
     <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="#page-top" style="color: rgb(0, 0, 0)"
+        <a class="navbar-brand" href="#home" style="color: rgb(0, 0, 0)"
           ><img src="assets/img/Group%2050.svg" style="width: 17vh" /></a
         ><button
           data-bs-toggle="collapse"
@@ -48,7 +68,7 @@
             <li class="nav-item">
               <a
                 class="nav-link"
-                href="#contact"
+                href="#contato"
                 style="color: rgba(0, 0, 0, 0.7)"
                 >contato</a
               >
@@ -78,7 +98,7 @@
                 role="button"
                 href="https://www.instagram.com/abelinhaas/?hl=pt-br"
                 style="color: rgb(0, 0, 0)"
-                >veja meus instagram &nbsp;<i class="fa fa-instagram" aria-hidden="true"></i></a
+                >veja meu instagram &nbsp;<i class="fa fa-instagram" aria-hidden="true"></i></a
               >
               
             </div>
@@ -86,16 +106,16 @@
         </div>
       </div>
     </header>
-    <section class="bg-primary contact" id="contact">
+    <section class="bg-primary contact" id="contato">
       <div class="container mt-3">
         <h2>
           <span>Transformando memórias em linha&nbsp;</span
           ><i class="fa fa-heart"></i>
         </h2>
         <!-- Start: Contact Form Clean -->
-        <section class="contact-clean bg-primary" style="padding-top: 40px">
-          <form class="border rounded shadow" method="post">
-            <h2 class="text-center">Contate-nos :D</h2>
+        <section class="contact-clean bg-primary"   style="padding-top: 40px">
+          <form class="border rounded shadow contatar" id="contact" method="post">
+            <h2 class="text-center">Contate-me!</h2>
            
             <!-- Start: Success Example -->
             <div class="mb-3">
@@ -126,7 +146,7 @@
               ></textarea>
             </div>
             <div class="mb-3 pt-3">
-              <a
+              <button
                 class="
                   btn btn-outline-warning
                   border
@@ -134,10 +154,11 @@
                   border-dark
                   btn-xl
                 "
-                role="button"
-                href="#download"
+                value="send"
+                type="submit"
+                href="#"
                 style="color: rgb(0, 0, 0)"
-                >enviar :D</a
+                >enviar :D</button
               >
 
             </div>
